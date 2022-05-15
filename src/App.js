@@ -75,7 +75,7 @@ const App = () => {
 
       for (let i = 0; i < userNickname.length; i++) {
         console.log(`Posição ${i}: ${userNickname[i]}`)
-        return 'oi'
+        //return userNickname[i]
       }
 
     }
