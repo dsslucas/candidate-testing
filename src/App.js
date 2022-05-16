@@ -40,7 +40,7 @@ const App = () => {
 
   function LoadList() {
 
-    var newNickname = []
+    //var newNickname = []
 
     const manageOnlineUsers = async () => {
       //Load all users
