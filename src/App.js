@@ -36,6 +36,7 @@ const App = () => {
   useEffect(() => {
     console.log("oi")
     LoadList()
+    returnMain()
   }, [])
 
   function LoadList() {
@@ -77,10 +78,28 @@ const App = () => {
         console.log(`Posição ${i}: ${userNickname[i]}`)
         //return userNickname[i]
       }
+      returnMain()
 
     }
 
+
+
     return <li>{renderItens()}</li>
+
+  }
+
+  function returnMain() {
+    console.log(`DENTRO DA FUNÇÃO DE RETORNO
+      USERNAME 1: ${userNickname[0]}
+      USERNAME 2: ${userNickname[1]}
+      USERNAME 3: ${userNickname[2]}
+    `)
+
+    const returnValues = userNickname.map((element) => {
+      console.log(element)
+    })
+
+    return returnValues
 
   }
 
@@ -93,7 +112,8 @@ const App = () => {
             <li>Student 1</li>
             <li>Student 2</li>
             <li>Student 3</li>
-            {console.log("NA PRINCIPAL", userNickname)}
+            
+            <li>{returnMain()}</li>
             {userNickname && userNickname.map((username) => <li>{username}</li>)}
           </ul>
         </div>
