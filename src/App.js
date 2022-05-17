@@ -59,7 +59,7 @@ const App = () => {
             returnMain()
           }
           else {
-            alert(`Despite ${nicknames[i]} is online. by a error, the email has not been sended to the user. We apologize.`)
+            //alert(`Despite ${nicknames[i]} is online. by a error, the email has not been sended to the user. We apologize.`)
           }
         }
       }
