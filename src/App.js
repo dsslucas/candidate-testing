@@ -83,15 +83,7 @@ const App = () => {
         <div>
           All online users that introductions were sucessfully sent
           <ul>
-            <li>Student 1</li>
-            <li>Student 2</li>
-            <li>Student 3</li>
-
-            <br />
-            <p>TESTES COM ESTADO</p>
-
             {userNickname && userNickname.map((username, index) => <li key={index}>{username}</li>)}
-
           </ul>
         </div>
       </div>
