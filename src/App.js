@@ -36,6 +36,11 @@ const App = () => {
     LoadList()
   }, [])
 
+  useEffect(() => {
+    //For consult values
+    returnMain()
+  }, [userNickname])
+
   function LoadList() {
 
     //Async Function, for consult the nicknames and status mode
@@ -54,12 +59,8 @@ const App = () => {
 
           //Check if the email has been sended to online users
           if (emailWasSend === true) {
-            userNickname.push(nicknames[i])
-            //newUsernameList.push(nicknames[i])
-            returnMain()
-          }
-          else {
-            //alert(`Despite ${nicknames[i]} is online. by a error, the email has not been sended to the user. We apologize.`)
+            //First option, with Arrow Function
+            setUserNickname((nicks) => [...nicks, nicknames[i]])
           }
         }
       }
