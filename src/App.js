@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-
-
 const App = () => {
 
   const fetchUserIds = async () => {
@@ -34,15 +32,13 @@ const App = () => {
   */
 
   useEffect(() => {
-    console.log("oi")
+    //setUserNickname([])
     LoadList()
-    returnMain()
   }, [])
 
   function LoadList() {
 
-    //var newNickname = []
-
+    //Async Function, for consult the nicknames and status mode
     const manageOnlineUsers = async () => {
       //Load all users
       const nicknames = await fetchUserIds()
@@ -59,48 +55,26 @@ const App = () => {
           //Check if the email has been sended to online users
           if (emailWasSend === true) {
             userNickname.push(nicknames[i])
-            renderItens()
+            //newUsernameList.push(nicknames[i])
+            returnMain()
           }
           else {
-            //alert(`Despite ${nicknames[i]} is online. by a error, the email has not been sended to the user. We apologize.`)
+            alert(`Despite ${nicknames[i]} is online. by a error, the email has not been sended to the user. We apologize.`)
           }
-
         }
       }
     }
     manageOnlineUsers();
-
-    const renderItens = () => {
-      console.log(userNickname)
-      console.log("Tamanho do array: ", userNickname.length)
-
-      for (let i = 0; i < userNickname.length; i++) {
-        console.log(`Posição ${i}: ${userNickname[i]}`)
-        //return userNickname[i]
-      }
-      returnMain()
-
-    }
-
-
-
-    return <li>{renderItens()}</li>
-
   }
 
+  //For consult values
   function returnMain() {
-    console.log(`DENTRO DA FUNÇÃO DE RETORNO
+    console.log(`
+      ARRAY WITHIN STATE:
       USERNAME 1: ${userNickname[0]}
       USERNAME 2: ${userNickname[1]}
       USERNAME 3: ${userNickname[2]}
     `)
-
-    const returnValues = userNickname.map((element) => {
-      console.log(element)
-    })
-
-    return returnValues
-
   }
 
   return (
@@ -112,9 +86,12 @@ const App = () => {
             <li>Student 1</li>
             <li>Student 2</li>
             <li>Student 3</li>
-            
-            <li>{returnMain()}</li>
-            {userNickname && userNickname.map((username) => <li>{username}</li>)}
+
+            <br />
+            <p>TESTES COM ESTADO</p>
+
+            {userNickname && userNickname.map((username, index) => <li key={index}>{username}</li>)}
+
           </ul>
         </div>
       </div>
